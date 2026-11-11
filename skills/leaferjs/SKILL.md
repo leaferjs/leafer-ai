@@ -13,15 +13,15 @@ Use this skill to turn ideas into runnable LeaferJS applications, explain APIs, 
 
 Users can describe what they want to make without knowing LeaferJS, Canvas, or programming terminology. Recognize requests by the intended interaction and output as well as by library names.
 
-| User request | LeaferJS starting point | First usable result |
-| --- | --- | --- |
-| “Make a board where I can freely arrange cards” / “做一个可以拖动卡片的白板” | Scene containers, dragging, viewport pan and zoom | A populated board with movable cards and working navigation. |
-| “I want to make posters” / “做一个海报编辑工具” | Text and images, editor, image export | A sample poster whose elements can be selected and transformed, with the requested export action. |
-| “Connect ideas or workflow steps” / “做流程图、思维导图” | Nodes, lines or connector plugins, viewport | A small connected diagram with movable nodes and the requested connection behavior. |
-| “Organize AI images and storyboards” / “AI 分镜画布” | Image cards, layout, connectors, media features | An editable storyboard using sample content and the requested preview interactions. |
-| “Show devices and their status” / “工业组态、设备拓扑” | Scene tree, events, state styling, animation | A small topology with clearly labeled sample status data. |
-| “Make an interactive lesson or mini-game” / “互动教学、小游戏” | Pointer events, animation, game features | A playable or interactive first scene with a clear action and visible feedback. |
-| “Generate a composed image” / “批量合成图片” | Runtime-specific drawing and export | A runnable composition example that produces the requested image. |
+| User request                                                                 | LeaferJS starting point                           | First usable result                                                                               |
+| ---------------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| “Make a board where I can freely arrange cards” / “做一个可以拖动卡片的白板” | Scene containers, dragging, viewport pan and zoom | A populated board with movable cards and working navigation.                                      |
+| “I want to make posters” / “做一个海报编辑工具”                              | Text and images, editor, image export             | A sample poster whose elements can be selected and transformed, with the requested export action. |
+| “Connect ideas or workflow steps” / “做流程图、思维导图”                     | Nodes, lines or connector plugins, viewport       | A small connected diagram with movable nodes and the requested connection behavior.               |
+| “Organize AI images and storyboards” / “AI 分镜画布”                         | Image cards, layout, connectors, media features   | An editable storyboard using sample content and the requested preview interactions.               |
+| “Show devices and their status” / “工业组态、设备拓扑”                       | Scene tree, events, state styling, animation      | A small topology with clearly labeled sample status data.                                         |
+| “Make an interactive lesson or mini-game” / “互动教学、小游戏”               | Pointer events, animation, game features          | A playable or interactive first scene with a clear action and visible feedback.                   |
+| “Generate a composed image” / “批量合成图片”                                 | Runtime-specific drawing and export               | A runnable composition example that produces the requested image.                                 |
 
 Use these as starting points and adapt them to the user's requirements. Identify which features are essential for the first usable result.
 
@@ -52,17 +52,17 @@ The ai-docs repository is placed directly beside this file. All paths in this sk
 
 Start with [README.md](README.md) for the original knowledge-base overview and [introduction.md](introduction.md) for LeaferJS concepts and application scenarios.
 
-| Resource | Purpose |
-| --- | --- |
-| `examples/` | Official implementation patterns and runnable examples. Search here first when writing code. |
-| `examples/menu.json` | Example catalog for finding relevant topics. |
-| `guide/` | Installation, basic and advanced usage, framework integration, lifecycle, and troubleshooting. |
-| `reference/` | Elements, properties, methods, events, configuration, coordinates, bounds, and interfaces. |
-| `plugin/` | Plugin setup, dependencies, APIs, and plugin development. |
-| `src/` | Source for the engine, product packages, and plugins. Use to resolve implementation and type questions. |
-| `update/index.md` | Version history. Check when examples, APIs, or installed versions differ. |
-| `feature.md` | Feature overview and comparison context. Verify details against the corresponding API or plugin documentation. |
-| `performance.md` | Benchmark scenarios and measurements. Preserve the workload and environment when discussing results. |
+| Resource             | Purpose                                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `examples/`          | Official implementation patterns and runnable examples. Search here first when writing code.                   |
+| `examples/menu.json` | Example catalog for finding relevant topics.                                                                   |
+| `guide/`             | Installation, basic and advanced usage, framework integration, lifecycle, and troubleshooting.                 |
+| `reference/`         | Elements, properties, methods, events, configuration, coordinates, bounds, and interfaces.                     |
+| `plugin/`            | Plugin setup, dependencies, APIs, and plugin development.                                                      |
+| `src/`               | Source for the engine, product packages, and plugins. Use to resolve implementation and type questions.        |
+| `update/index.md`    | Version history. Check when examples, APIs, or installed versions differ.                                      |
+| `feature.md`         | Feature overview and comparison context. Verify details against the corresponding API or plugin documentation. |
+| `performance.md`     | Benchmark scenarios and measurements. Preserve the workload and environment when discussing results.           |
 
 Load relevant files progressively. Locate the closest example, read the matching documentation, then consult types or implementation when needed. Search filenames and symbols before reading large directories.
 
@@ -86,6 +86,61 @@ Choose features according to the user's actual application.
 
 Confirm each feature's implementation in the relevant documentation, including its package, imports, dependencies, and version availability.
 
+## Prefer existing plugins
+
+Before implementing a requested feature, map it to the catalog below and read the matching plugin documentation and example. Confirm installation, registration imports, dependencies, and compatibility with the selected engine package. Use the official feature when it satisfies the requirement. Write custom behavior only for the remaining application-specific needs or a documented gap, and explain that gap briefly.
+
+Check plugins before writing wheel or gesture handlers, viewport transforms, fit calculations, selection controls, text editing, layout, connectors, animation, or export logic. Some product packages already bundle these capabilities; follow their documented imports.
+
+### Plugin catalog
+
+This table covers the plugin entry pages currently present in the knowledge base. For newly added plugins, inspect `plugin/in/` and the corresponding `examples/plugin/` directory as well as `plugin/index.md`.
+
+| Need                                                                  | Plugin documentation                            |
+| --------------------------------------------------------------------- | ----------------------------------------------- |
+| Wheel, trackpad, and touch pan/zoom interactions                      | [viewport](plugin/in/viewport/index.md)         |
+| Zoom in/out, fit content, fit width/height, focus elements or regions | [view](plugin/in/view/index.md)                 |
+| Infinite-canvas scrollbars                                            | [scroll](plugin/in/scroll/index.md)             |
+| Scrolling content inside Box or Frame                                 | [scroller](plugin/in/scroller/index.md)         |
+| Selection, multi-selection, grouping, and transform editing           | [editor](plugin/in/editor/index.md)             |
+| Resize element or group bounds                                        | [resize](plugin/in/resize/index.md)             |
+| Interactive text editing                                              | [text-editor](plugin/in/text-editor/index.md)   |
+| Connections between graphical elements                                | [linker](plugin/in/linker/index.md)             |
+| Start and end arrowheads                                              | [arrow](plugin/in/arrow/index.md)               |
+| Flex-like automatic layout                                            | [flow](plugin/in/flow/index.md)                 |
+| Relative positioning and edge placement                               | [position](plugin/in/position/index.md)         |
+| Add Box container capabilities to basic elements                      | [box](plugin/in/box/index.md)                   |
+| Keep element global scale fixed while zooming                         | [scale-fixed](plugin/in/scale-fixed/index.md)   |
+| Animation, keyframes, playback, and seeking                           | [animate](plugin/in/animate/index.md)           |
+| Hover, press, focus, selected, and disabled styles                    | [state](plugin/in/state/index.md)               |
+| Movement along paths and progressive strokes                          | [motion-path](plugin/in/motion-path/index.md)   |
+| Text along motion paths                                               | [motion-text](plugin/in/motion-text/index.md)   |
+| Gradient color transition animation                                   | [transition](plugin/in/transition/index.md)     |
+| Sprite frames and game actions                                        | [robot](plugin/in/robot/index.md)               |
+| Background animation rendering                                        | [bg-runner](plugin/in/bg-runner/index.md)       |
+| Video rendering and playback                                          | [video](plugin/in/video/index.md)               |
+| Animated-image rendering and playback                                 | [film](plugin/in/film/index.md)                 |
+| HTML rich text and HTML node overlays                                 | [html](plugin/in/html/index.md)                 |
+| GPU image adjustment and filtering                                    | [image-filter](plugin/in/image-filter/index.md) |
+| Custom filters                                                        | [filter](plugin/in/filter/index.md)             |
+| Color conversion                                                      | [color](plugin/in/color/index.md)               |
+| Rounded path corners                                                  | [corner](plugin/in/corner/index.md)             |
+| Independent rectangle-side strokes                                    | [stroke-sides](plugin/in/stroke-sides/index.md) |
+| Highlight and dim elements                                            | [bright](plugin/in/bright/index.md)             |
+| Find scene elements                                                   | [find](plugin/in/find/index.md)                 |
+| Export elements and scenes                                            | [export](plugin/in/export/index.md)             |
+
+### Pan, zoom, and fit
+
+For the whiteboard and infinite-canvas examples, inspect both [viewport](plugin/in/viewport/index.md) and [view](plugin/in/view/index.md) before coding.
+
+- Use the viewport plugin and its scene configuration for wheel, touchpad, and touch interactions. Follow `guide/advanced/viewport.md` for movement, zoom limits, and wheel options.
+- Use the view plugin's documented `zoom()` API for toolbar buttons, fitting content, and focusing nodes. Examples include `zoom('in')`, `zoom('out')`, and `zoom('fit')` on the appropriate Leafer instance, commonly `app.tree`.
+- Keep viewport navigation and element dragging coordinated through the engine's documented interaction settings.
+- Verify the resulting imports and behavior. Explain any custom interaction code that remains necessary.
+
+Read each plugin's own documentation for companion plugins and constraints. For example, editor setup may require resize, text editing builds on editor functionality, and interactive connection editing may use a separate extension from the basic linker element. For optional community or commercial extensions, verify their availability and requirements before adding a dependency.
+
 ## Workflow
 
 ### 1. Understand the project
@@ -94,13 +149,13 @@ Determine the requested behavior, target runtime, framework, and deliverable. In
 
 Reuse the project's structure and installed package family. For a new application, select a package using `guide/install/index.md`.
 
-| Package | Intended starting point |
-| --- | --- |
-| `leafer-ui` | General interactive graphics applications. |
-| `leafer-draw` | Lightweight drawing-oriented applications. |
-| `leafer-editor` | Applications needing the bundled graphics editing features. |
-| `leafer-game` | Games using the included game-related plugins. |
-| `leafer` | Full package with its documented plugin and subpackage imports. |
+| Package         | Intended starting point                                         |
+| --------------- | --------------------------------------------------------------- |
+| `leafer-ui`     | General interactive graphics applications.                      |
+| `leafer-draw`   | Lightweight drawing-oriented applications.                      |
+| `leafer-editor` | Applications needing the bundled graphics editing features.     |
+| `leafer-game`   | Games using the included game-related plugins.                  |
+| `leafer`        | Full package with its documented plugin and subpackage imports. |
 
 Read the selected package's runtime-specific installation instructions. Check which plugins it already includes. Keep imports consistent when adapting examples between packages.
 
@@ -108,24 +163,26 @@ Read the selected package's runtime-specific installation instructions. Check wh
 
 Prefer a small, relevant official example. Read its imports and setup as well as its feature code.
 
-| Task | Useful starting points |
-| --- | --- |
-| First application | `guide/basic/leafer.md`, `examples/start/` |
-| Elements and styling | `guide/basic/display.md`, `guide/basic/style.md`, `reference/display/`, `reference/UI/` |
-| App layers | `guide/advanced/app.md`, `reference/display/App.md` |
-| Infinite canvas | `guide/advanced/viewport.md`, `examples/app/`, `plugin/in/view/` |
-| Interaction and events | `guide/basic/event.md`, `examples/event/`, `examples/event-ui/`, `examples/interaction/` |
-| Coordinates and bounds | `guide/advanced/coordinate.md`, `guide/advanced/bounds.md`, `reference/math/` |
-| Graphics editing | `guide/plugin/editor.md`, `plugin/in/editor/`, `examples/plugin/editor/` |
-| Animation and layout | `guide/plugin/`, `plugin/in/`, `examples/plugin/` |
-| Serialization and export | `reference/UI/json.md`, `reference/UI/export.md` |
-| Framework integration | `guide/framework/` |
-| Node.js and Worker | `guide/install/`, `examples/nodejs/`, `examples/worker/` |
-| Custom elements and plugins | `reference/display/custom/`, `plugin/dev.md`, `src/leafer-in/` |
+| Task                        | Useful starting points                                                                   |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| First application           | `guide/basic/leafer.md`, `examples/start/`                                               |
+| Elements and styling        | `guide/basic/display.md`, `guide/basic/style.md`, `reference/display/`, `reference/UI/`  |
+| App layers                  | `guide/advanced/app.md`, `reference/display/App.md`                                      |
+| Infinite canvas             | `guide/advanced/viewport.md`, `examples/app/`, `plugin/in/view/`                         |
+| Interaction and events      | `guide/basic/event.md`, `examples/event/`, `examples/event-ui/`, `examples/interaction/` |
+| Coordinates and bounds      | `guide/advanced/coordinate.md`, `guide/advanced/bounds.md`, `reference/math/`            |
+| Graphics editing            | `guide/plugin/editor.md`, `plugin/in/editor/`, `examples/plugin/editor/`                 |
+| Animation and layout        | `guide/plugin/`, `plugin/in/`, `examples/plugin/`                                        |
+| Serialization and export    | `reference/UI/json.md`, `reference/UI/export.md`                                         |
+| Framework integration       | `guide/framework/`                                                                       |
+| Node.js and Worker          | `guide/install/`, `examples/nodejs/`, `examples/worker/`                                 |
+| Custom elements and plugins | `reference/display/custom/`, `plugin/dev.md`, `src/leafer-in/`                           |
 
 Check exact names, signatures, defaults, and required plugin registration before implementation. Resolve version conflicts using installed declarations, the relevant source, and update records.
 
 ### 3. Build the scene and interactions
+
+Apply the plugin catalog above before implementing feature logic.
 
 Use Leafer as a rendering-tree root and App for the application structure required by the chosen example. For App scenes, put content into the documented content layer, commonly `app.tree`, and use the editor and overlay layers as documented.
 
