@@ -2,6 +2,8 @@
 
 LeaferJS 官方 Skills，让 AI 借助官方示例、文档和源码，帮你构建可交互、可编辑的图形应用。
 
+本仓库的知识库内容同步自 [ai-docs](https://github.com/leaferjs/ai-docs)，并持续自动更新。
+
 无限画布 · 海报编辑器 · 思维导图 · 分镜画布 · 互动动画 · 小游戏
 
 ## 🌱 零基础上手
@@ -98,4 +100,8 @@ npx skills update leaferjs
 
 [LeaferJS 官网](https://www.leaferjs.com/) · [在线示例](https://www.leaferjs.com/examples/) · [Playground](https://www.leaferjs.com/playground/) · [AI 知识库](https://github.com/leaferjs/ai-docs)
 
-[MIT License](LICENSE)
+## License
+
+MIT 开源许可协议，可以免费使用，且能用于商业场景。
+
+Copyright © 2023-present Chao (Leafer) Wan
