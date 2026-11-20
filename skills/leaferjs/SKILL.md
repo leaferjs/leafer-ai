@@ -70,6 +70,24 @@ Some documents contain website components, root-relative links, or embedded code
 
 If the knowledge base has not been synced, consult [ai-docs](https://github.com/leaferjs/ai-docs) and the [official documentation](https://www.leaferjs.com/ui/). Use the project's installed types and source to verify version-specific APIs.
 
+## Documentation Index
+
+Based on your development needs, use the following indexes to find relevant documentation and read only what is necessary.
+
+- **[Development Guide Index](./guide-menus.md)**  
+  Quick start, tutorials, and common development scenarios.
+
+- **[API Reference Index](./reference-menus.md)**  
+  Elements, properties, methods, events, and other API references.
+
+- **[Plugin Documentation Index](./plugin-menus.md)**  
+  Official plugins and extensions. Prioritize existing functionality to avoid redundant development.
+
+- **[Common Element API](./reference/display/UI.md)**  
+  Common properties and methods inherited by all elements, including data, layout, appearance, interaction, and animation.
+
+When working with elements, also check the Common Element API for inherited properties and methods.
+
 ## Capabilities and application design
 
 Choose features according to the user's actual application.
