@@ -6,6 +6,20 @@ LeaferJS 官方 Skills，让 AI 借助官方示例、文档和源码，帮你构
 
 无限画布 · 海报编辑器 · 思维导图 · 分镜画布 · 互动动画 · 小游戏
 
+## ⚡ 按需读取，更省 Token
+
+LeaferJS Skill 内置了丰富的官方文档、示例和插件知识，并针对 AI 检索进行了优化，无需一次性加载全部内容。
+
+我们专门建立了 3 类文档索引：
+
+- **开发指南索引**：快速定位入门教程、开发指南和常见场景。
+- **API 参考索引**：快速查找元素、属性、方法和事件。
+- **插件文档索引**：快速找到已有插件和功能实现，避免重复造轮子。
+
+AI 会根据需求优先进行本地关键词搜索，或通过文档索引定位，只读取相关文档及内嵌示例，减少不必要的 Token 消耗。
+
+**文件数量不等于 Token 消耗。** 实际消耗主要取决于 AI 读取的内容和使用的工具。
+
 ## 🌱 零基础上手
 
 ### 1. 让 AI 帮你安装
@@ -86,15 +100,6 @@ npx skills update leaferjs
 </details>
 
 <details>
-<summary>📦 仓库维护</summary>
-
-首个 Skill 为 [`leaferjs`](skills/leaferjs/SKILL.md)。
-
-将 [ai-docs](https://github.com/leaferjs/ai-docs) 的内容直接同步到 `skills/leaferjs/`，保留原始 README.md 和目录层级。同步时跳过上游 `.git/`、`skills/`，保留本仓库的 `SKILL.md`。
-
-初始化版本提供 Skill 指引，知识库由维护者同步后随仓库发布。
-
-</details>
 
 ## 🔗 相关链接
 
